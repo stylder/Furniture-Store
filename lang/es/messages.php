@@ -53,6 +53,7 @@ return [
         'address'   => 'Dirección',
         'street_1'  => 'Entre calle 1',
         'street_2'  => 'Entre calle 2',
+        'created_at' => 'Registrado',
 
         'create_customer' => 'Crear cliente',
 
