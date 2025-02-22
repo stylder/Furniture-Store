@@ -62,7 +62,10 @@
     <div class="container">
         <div class="header">
             <h1>Orden #{{ $order->number }}</h1>
-            <p>{{ \Carbon\Carbon::now()->format('d/m/Y') }}</p>
+            @php
+                $firstPayment = $order->payments->sortBy('created_at')->first();
+            @endphp
+            <p>{{ optional($firstPayment)->created_at->format('d/m/Y') ?? 'Fecha no disponible' }}</p>
         </div>
         <div class="info-section">
             <h5>Información del Cliente</h5>
